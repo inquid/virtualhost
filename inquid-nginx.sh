@@ -140,6 +140,10 @@ if [ "$action" == 'create' ]
 
 		### show the finished message
 		echo -e $"Complete! \nYou now have a new Virtual Host \nYour new host is: http://$domain \nAnd its located at $userDir$rootDir"
+		echo -e $"Issuing a new SSL Certificate"
+		getssl -c $domain
+		getssl $domain
+		echo -e $"SSL Complete, now your site is secure!"
 		exit;
 	else
 		### check whether domain already exists
